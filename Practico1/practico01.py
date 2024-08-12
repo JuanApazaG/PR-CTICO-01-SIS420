@@ -1,14 +1,31 @@
-import numpy as np
 import pandas as pd
 
-# Establecer una semilla para reproducibilidad
-np.random.seed(0)
+# Listas de estaturas y pesos (100 valores cada una)
+alturas = [
+    1.50, 1.55, 1.60, 1.65, 1.70, 1.75, 1.80, 1.85, 1.90, 1.95,
+    1.52, 1.57, 1.62, 1.67, 1.72, 1.77, 1.82, 1.87, 1.92, 1.97,
+    1.54, 1.59, 1.64, 1.69, 1.74, 1.79, 1.84, 1.89, 1.94, 1.99,
+    1.51, 1.56, 1.61, 1.66, 1.71, 1.76, 1.81, 1.86, 1.91, 1.96,
+    1.53, 1.58, 1.63, 1.68, 1.73, 1.78, 1.83, 1.88, 1.93, 1.98,
+    1.55, 1.60, 1.65, 1.70, 1.75, 1.80, 1.85, 1.90, 1.95, 2.00,
+    1.57, 1.62, 1.67, 1.72, 1.77, 1.82, 1.87, 1.92, 1.97, 2.02,
+    1.59, 1.64, 1.69, 1.74, 1.79, 1.84, 1.89, 1.94, 1.99, 2.04,
+    1.61, 1.66, 1.71, 1.76, 1.81, 1.86, 1.91, 1.96, 2.01, 2.06,
+    1.63, 1.68, 1.73, 1.78, 1.83, 1.88, 1.93, 1.98, 2.03, 2.08
+]
 
-# Generar estaturas entre 1.50 y 2.05 metros
-alturas = np.random.uniform(1.50, 2.05, 100)
-
-# Generar pesos correlacionados con la estatura, entre 50 y 100 kilos
-pesos = alturas * np.random.uniform(20, 30) + np.random.uniform(10, 15)
+pesos = [
+    45, 48, 52, 55, 60, 65, 70, 75, 80, 85,
+    46, 50, 54, 57, 62, 67, 72, 77, 82, 87,
+    47, 51, 56, 59, 64, 69, 74, 79, 84, 89,
+    46, 49, 53, 58, 63, 68, 73, 78, 83, 88,
+    48, 52, 57, 60, 65, 70, 75, 80, 85, 90,
+    49, 54, 58, 61, 66, 71, 76, 81, 86, 91,
+    50, 55, 59, 63, 68, 73, 78, 83, 88, 93,
+    51, 56, 61, 64, 69, 74, 79, 84, 89, 94,
+    53, 57, 62, 67, 71, 76, 81, 86, 91, 96,
+    54, 60, 64, 69, 74, 79, 84, 89, 94, 99
+]
 
 # Crear un DataFrame con los datos
 data = pd.DataFrame({
@@ -16,5 +33,7 @@ data = pd.DataFrame({
     'Peso': pesos
 })
 
-# Guardar el DataFrame en un archivo CSV (opcional)
+# Guardar el DataFrame en un archivo CSV
 data.to_csv('peso_estatura.csv', index=False)
+
+print("Tabla de datos guardada en 'peso_estatura.csv'")
